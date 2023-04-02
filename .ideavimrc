@@ -1,0 +1,133 @@
+set hlsearch                    " highlight searches
+set incsearch                   " do incremental searching, search as you type
+set ignorecase                  " ignore case when searching
+set smartcase                   " no ignorecase if Uppercase char present
+set nu relativenumber
+set which-key
+
+" 设置显示模式
+set showomode
+set showcmd                     " 状态栏展示命令前缀
+set de=on                       "  开启错误提示
+
+" 设置leader
+" 设置leader为空格
+nnoremap <Space> <Nop>
+let mapleader = " "
+
+"翻页设置
+nnoremap <Leader>d <C-d>
+nnoremap <Leader>u <C-u>
+" 清理高亮 <Leader 表示逗号 也可以直接使用:nohl
+nnoremap <Leader>sc :nohlsearch<CR>
+
+
+" 窗口操作 window operation
+noremap <leader>wv <C-W>v
+nnoremap <leader>ws <C-W>s
+nnoremap <leader>w- <C-W>s
+nnoremap <leader>w\| <C-W>v
+
+nnoremap <leader>ww <C-W>w
+nnoremap <leader>wd <C-W>c
+nnoremap <leader>wj <C-W>j
+nnremap <leader>wk <C-W>k
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wl <C-W>l
+
+
+"开启插件
+set ideajoin
+set NERDTree
+set surround
+"参数选择插件 使用 v i/a + w/s/p 或者[{(<‘"t ,这里的t表示html或者xml的选择
+"这里i/a 的区别是i 是inside,a是souard
+set argtextobj
+"行高亮插件
+set vim-highlightedyank
+
+"粘贴和复制
+nnoremap <Leader>y "*y
+" 将剪贴板内容粘贴
+nnoremap <Leader>p "*p
+nnoremap <Leader>P "*0p
+vnoremap Y "+y
+
+"tab
+nnoremap tn gt
+nnoremap tp gT
+
+
+" 退出模式
+nnoremap <Space>q :q<CR>
+nnoremap <Space>Q :qa!<CR>
+
+"编辑vimrc
+nnoremap <leader>ve :e ~/.ideavimrc<CR>
+nnoremap <leader>vw :w!<CR>
+nnoremap <leader>vs :source ~/.ideavimrc<CR>
+
+
+" https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+" NERDTreeFocus 将窗口的光标移动tree 里面
+" o 打开文件，文件夹但是丢失focus
+" go 打开文件但是不丢失focus
+" i 使用分离的window open file
+" gi 打开分离的window,但是不丢失光标：
+" s ,gs 和上面是相同的原理
+" x 关闭当前节点的parent
+" p 跳转到当前节点的root节点，P 跳转到项目的root节点
+" m 展示菜单:
+" A 全局或者缩小窗口
+nnoremap <leader>ntf :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" intellij built in key map
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>b :action Bookmarks<CR>
+nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>e :action SearchEverywhere<CR>
+"nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>gc :action Git.CompareWithBranch<CR>
+nnoremap <leader>ga :action Annotate<CR>
+nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
+nnoremap <leader>nj :action NewClass<CR>
+nnoremap <leader>nt :action Kotlin.NewFile<CR>
+nnoremap <leader>r :action RecentFiles<CR>
+
+"toggle something
+"toggle track vim action Id
+nnoremap ta :action VimFindActionIdAction<CR>
+
+" run and debug
+nnoremap ,d :action Debug<CR>
+nnoremap ,r :action Run<CR>
+nnoremap ,c :action CompileDirty<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,v :action ViewBreakpoints<CR>
+nnoremap ,s :action Stop<CR>
+" navigation
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gb :action JumpToLastChange<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gf :action FileStructurePopup<CR>
+
+" code actions
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+nnoremap == :action ReformatCode<CR>
+vnoremap = :action ReformatCode<CR>
+nnoremap -- :action OptimizeImports<CR>
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+
+
+
+imap jj <ESC>
+
+"设置acejump 键盘map
+map f <Action>(AceAction)%
+
