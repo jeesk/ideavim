@@ -19,8 +19,8 @@ let mapleader = " "
 imap jj <ESC>
 nnoremap <C-$>
 map <F5> i{<Esc>ea}<Esc>
-
-nnoremap <leader>c $v$%y
+"在某个函数名上执行快捷复制某个函数
+nnoremap <leader>c V$%y
 
 
 "设置acejump 快捷键为f
