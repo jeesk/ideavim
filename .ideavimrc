@@ -1,3 +1,4 @@
+" enable plugin 开启插件
 set hlsearch                    " highlight searches
 set incsearch                   " do incremental searching, search as you type
 set ignorecase                  " ignore case when searching
@@ -14,6 +15,10 @@ set de=on                       "  开启错误提示
 " 设置leader为空格
 nnoremap <Space> <Nop>
 let mapleader = " "
+
+imap jj <ESC>
+"设置acejump 快捷键为f
+map f <Action>(AceAction)%
 
 "翻页设置
 nnoremap <Leader>d <C-d>
@@ -53,19 +58,18 @@ nnoremap <Leader>p "*p
 nnoremap <Leader>P "*0p
 vnoremap Y "+y
 
-"tab
+"tab operation tab操作
 nnoremap tn gt
 nnoremap tp gT
-
 
 " 退出模式
 nnoremap <Space>q :q<CR>
 nnoremap <Space>Q :qa!<CR>
 
 "编辑vimrc
-nnoremap <leader>ve :e ~/.ideavimrc<CR>
+nnoremap <leader>ve :e ~/.config/ideavim/.ideavimrc<CR>
 nnoremap <leader>vw :w!<CR>
-nnoremap <leader>vs :source ~/.ideavimrc<CR>
+nnoremap <leader>vs :source ~/.config/ideavim/.ideavimrc<CR>
 
 
 " https://github.com/JetBrains/ideavim/wiki/NERDTree-support
@@ -126,8 +130,4 @@ vnoremap cc :action CommentByLineComment<CR>
 
 
 
-imap jj <ESC>
-
-"设置acejump 键盘map
-map f <Action>(AceAction)%
 
