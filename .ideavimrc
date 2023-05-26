@@ -32,6 +32,7 @@ nnoremap <Leader>d <C-d>
 nnoremap <Leader>u <C-u>
 " 清理高亮 <Leader 表示逗号 也可以直接使用:nohl
 nnoremap <Leader>sc :nohlsearch<CR>
+nnoremap <Leader>sl :close<CR>
 
 
 " 窗口操作 window operation
@@ -121,7 +122,8 @@ nnoremap <leader>ga :action Annotate<CR>
 nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
 nnoremap <leader>nj :action NewClass<CR>
 nnoremap <leader>nt :action Kotlin.NewFile<CR>
-nnoremap <leader>r :action RecentFiles<CR>
+nnoremap <leader>rf :action RecentFiles<CR>
+nnoremap <leader>rl :action RecentLocations<CR>
 
 "toggle something
 "toggle track vim action Id
